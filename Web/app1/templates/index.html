@@ -1,0 +1,35 @@
+<style>
+a
+{
+	text-decoration:none;
+}
+a:visited{color:#0000ff; }
+</style>
+<form action="/out/" method="get">
+    欢迎用户 {{user.get_username}}  <input type="submit" value="退出登陆">
+</form>
+{%if vote_date %} 
+<li><a href="{% url 'votes' vote_date.0 vote_date.1 vote_date.2 %}">
+{{ vote_date.0 }}年{{ vote_date.1 }}月{{ vote_date.2 }}日投票进行中</a></li>
+<br/>
+{% else %}
+    <p>昨日无图，因此没有对应的投票，俺も頑張らないと！</p>
+{% endif %}
+
+{% if show_dates %}
+    <ul>
+    {% for show_date in show_dates %}
+        <li><a href="{% url 'showImg' show_date.0 show_date.1 show_date.2%}" target="show_window">
+        {{ show_date.0 }}年{{ show_date.1 }}月{{ show_date.2 }}日图片展示</a><br/>
+        {%if forloop.counter > index %}
+        <a href="{% url 'result' show_date.0 show_date.1 show_date.2%}" target= "vote_result_window">
+        {{ show_date.0 }}年{{ show_date.1 }}月{{ show_date.2 }}日投票结果</a><br/>
+        {% endif %}
+        
+        </li>   
+        
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>无图</p>
+{% endif %}

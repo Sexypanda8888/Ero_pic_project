@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<form action="" method="POST">
+{% csrf_token %}
+<pre>
+用户名      :<input type="text" name="name">
+
+群内微信id  :<input type="text" name="wxid">
+
+密码        :<input type="password" name="pwd">
+
+确认密码    :<input type="password" name="pwd2">
+
+                                <input type="submit" Value="注册">
+</pre>
+</form>
+</body>
+</html>

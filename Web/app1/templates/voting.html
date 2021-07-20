@@ -1,0 +1,16 @@
+<h1>{{year}}年{{month}}月{{day}}日投票：仍在火热进行中</h1><br/>
+
+<form action='' method='post'>
+{% csrf_token %}
+    <input type = "checkbox" name ="delete" id="-1"/><label for="-1">删除选项（如果发现不是欣赏类型的图片,想要删除就选择这个）</label><br/>
+    {% for item in imgs %}
+        <a href="{{item.img_url.url}}"><img src="{{ item.img_url.url }}" alt="Nice Boat"  width="200" height="200"></a>
+        <input type="checkbox" name='box' id="box{{forloop.counter}}" value="{{item.id}}" />
+<!-- <label for="box{{forloop.counter}}">
+        </label><br/>  -->
+        
+    {% endfor %}
+<input type="submit" value="Vote" />
+</form>
+
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+</head>
+<body>
+    {% for item in imgs %}
+        <a href="{{item.img_url.url}}" target='forloop.counter' ><img src="{{ item.img_url.url }}" alt="Nice Boat"  width="200" height="200"></a>
+    {% endfor %}
+
+</body>
+</html>

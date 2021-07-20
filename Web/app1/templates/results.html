@@ -1,0 +1,11 @@
+<h1>{{year}}年{{month}}月{{day}}日投票结果</h1><br/>
+ <p>
+    {% for item in imgs %}
+      <img src="{{ item.img_url.url }}" alt="Nice Boat"  width="200" height="200">:{{item.vote}}票
+     
+<!-- <label for="box{{forloop.counter}}">
+        </label><br/>  -->
+        
+    {% endfor %}
+  </p>
+

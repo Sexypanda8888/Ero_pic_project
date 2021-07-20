@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+</head>
+<body>
+<form action="" method="POST">
+{% csrf_token %}
+<pre>
+用户名:<input type="text" name="name">
+
+密 码 :<input type="password" name="pwd">
+<input type="submit" Value="登陆">                
+</form><form action="/register" method='get'><input type='submit' Value='注册'></form>
+</pre>
+
+</body>
+</html>
